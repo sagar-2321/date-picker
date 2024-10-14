@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import AdvancedDatePicker from './components/AdvancedDatePicker'; 
+import DatePicker from './components/DatePicker';
+import './App.css'; 
 
-function App() {
+const App: React.FC = () => {
+  const [isAdvancedMode, setIsAdvancedMode] = useState(false); 
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Date Picker App</h1>
+
+      
+      <div className="mode-toggle">
+        <label className="toggle-text">
+          {isAdvancedMode ? 'Disable Advanced Mode' : 'Enable Advanced Mode'}
+        </label>
+        <label className="switch">
+          <input
+            type="checkbox"
+            checked={isAdvancedMode}
+            onChange={() => setIsAdvancedMode(!isAdvancedMode)} 
+          />
+          <span className="slider round"></span>
+        </label>
+      </div>
+
+      
+      {isAdvancedMode ? (
+        <AdvancedDatePicker />
+      ) : (
+        <DatePicker />
+      )}
     </div>
   );
-}
+};
 
 export default App;

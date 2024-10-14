@@ -1,0 +1,185 @@
+
+.dual-pane {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 600px; }
+
+.dropdown {
+  position: relative;
+}
+
+.calendar-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  width: 306px;
+  padding: 10px;
+}
+
+.year-month-selector {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f7f7f7;
+  font-weight: bold;
+}
+
+.nav-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+  background-color: #0056b3;
+}
+
+.calendar-header, .calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+
+.calendar-day-header, .calendar-day {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.calendar-day {
+  background-color: white;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.calendar-day:hover {
+  background-color: #f0f0f0;
+}
+
+.calendar-day.disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.calendar-day.in-range {
+  background-color: lightblue;
+}
+
+.selected-range {
+  margin-top: 20px;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+}
+.date-range-picker {
+  padding: 2px 3px 95px 2px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  width: 489px;
+  margin: 7px auto;
+}
+
+.dual-pane {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dropdown {
+  width: 50%;
+  margin: 0 113px 0 0;
+  display: block;
+}
+
+.calendar-dropdown {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  margin-top: 5px;
+  padding: 10px;
+}
+
+.year-selector {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  margin-top: 5px;
+  padding: 10px;
+}
+
+.year-option {
+  padding: 5px;
+  cursor: pointer;
+}
+.year-list-container {
+  max-height: 100px; /* Set a fixed height to trigger scrolling */
+  overflow-y: scroll;  /* Ensure vertical scrolling is always visible */
+  border: 1px solid #ccc; /* Optional: for visual separation */
+  margin-top: 10px; /* Optional: for spacing */
+  width: 100px; /* Optional: set a width if needed */
+}
+
+.year-item {
+  padding: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.year-item:hover {
+  background-color: #f0f0f0; /* Optional: for hover effect */
+}
+.year-option:hover {
+  background-color: #f0f0f0;
+}
+
+.calendar-day {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.calendar-day.disabled {
+  color: gray;
+  cursor: not-allowed;
+}
+
+.calendar-day.in-range {
+  background-color: blue;
+  border-radius: 50%;
+  color: white;
+}
+
+.calendar-day.selected-range {
+  background-color: #007bff; /* Highlight selected range */
+  color: white;
+  border-radius: 50%;
+}
+
+.selected-range {
+  margin: 1px;
+  text-align: justify;
+  text-decoration: #96bde6;
+}
+.calendar-day.selected-range {
+  background-color: #007bff;
+  color: white;
+  border-radius: 50%;
+}
